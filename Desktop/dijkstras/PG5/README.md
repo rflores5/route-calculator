@@ -1,7 +1,27 @@
-Programming Assignment 5
-========================
+Calculating travel routes in South Bend using Dijkstra's Algorithm
 
-_Your description here_
+This program is from the command line through the route.cpp file. When it is run it takes a starting and ending address in South Bend as input and outputs a street-by-street driving directions to get to the ending address.
+ 
+For example:
+
+$ ./route 
+Starting address: 620 W Washington St 
+Ending address: 4477 Progress Dr 
+0.250207 miles on W Washington St 
+0.837454 miles on Laporte Ave 
+0.0397415 miles on Wilber St 
+1.76114 miles on Lincoln Way W 
+0.0729842 miles on Maplewood Ave 
+0.400587 miles on Commerce Dr 
+0.0442461 miles on Progress Dr
+
+All of the street information that is used can be found in the southbend.v2.map file. The street infromation is then translated to edges in a graph represented in an adjacency list. Dijkstra's algorithm is used on this street graph to find the shortest path between the start and end address. 
+
+Note: The files measure.c, random.txt, and test1/2/3/4/5a/5b are all used for testing purposes and are not necessary in running this program. 
+
+Each edge for the graph was a struct that contained the starting node, streetname, distance (weight), and ending node. (url not used)
+
+Below are some notes about the performance originally written for a reviewer.
 
 Each edge for the graph was a struct that contained the starting node, streetname, distance (weight), and ending node. (url not used)
 
@@ -18,5 +38,3 @@ I also used an unordered_set to store all of the nodes that have been visted.
 Because my path reconstruction started at target to the source, I added each direction to temporary stack which has
 Last in First Out capabilities. Then I popped the top off and added it the steps vector so that the first direction
 was now first. This processs also contributed to my test5b taking so long.
-
-_Grader comments here_
